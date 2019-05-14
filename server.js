@@ -16,9 +16,9 @@ app.get('*', (req, res) => {
 
 
 https.createServer({
-  cert: fs.readFileSync(__dirname+'/static/ssl/cert.pem'),
-  key: fs.readFileSync(__dirname+'/static/ssl/privkey.pem'),
-  ca: fs.readFileSync(__dirname+'/static/ssl/chain.pem')
+  cert: fs.readFileSync('/etc/letsencrypt/archive/www.nguyenquan.net/cert1.pem'),
+  key: fs.readFileSync('/etc/letsencrypt/archive/www.nguyenquan.net/privkey1.pem'),
+  ca: fs.readFileSync('/etc/letsencrypt/archive/www.nguyenquan.net/chain1.pem')
 }, app).listen(port, () => {
   console.log(`Listening...${port}`)
 })
